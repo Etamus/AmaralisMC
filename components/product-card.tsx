@@ -3,21 +3,17 @@
 import { Image } from "./ui/Image"
 import { Check, ChevronRight } from "lucide-react"
 import type { Product } from "@/lib/products"
+import { useCartStore } from "@/lib/store"
 
 function formatPrice(value: number) {
   return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
 }
 
-export function ProductCard({
-  product,
-  onAdd,
-}: {
-  product: Product
-  onAdd: (product: Product) => void
-}) {
+export function ProductCard({ product }: { product: Product }) {
+  const addItem = useCartStore((state) => state.addItem)
+
   return (
     <article className="group flex flex-col">
-      {/* Image area — full-bleed key art, like minecraft.net game cards */}
       <div className="relative aspect-square overflow-hidden border-2 border-neutral-800 transition-colors group-hover:border-purple-600">
         <Image
           src={product.image || "/placeholder.svg"}
@@ -46,7 +42,6 @@ export function ProductCard({
         </div>
       </div>
 
-      {/* Body */}
       <div className="flex flex-1 flex-col pt-4">
         <h3 className="text-lg font-bold text-white">{product.name}</h3>
         <p className="mt-1 text-sm text-neutral-400">{product.tagline}</p>
@@ -71,7 +66,7 @@ export function ProductCard({
 
         <button
           type="button"
-          onClick={() => onAdd(product)}
+          onClick={() => addItem(product)}
           className="group/btn mt-4 flex w-full items-center justify-center gap-2 bg-purple-600 px-4 py-2.5 text-sm font-bold tracking-wide text-white transition-colors hover:bg-purple-500"
         >
           COMPRAR

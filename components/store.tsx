@@ -4,7 +4,7 @@ import { useMemo, useState } from "react"
 import { FILTERS, PRODUCTS, type Category, type Product } from "@/lib/products"
 import { ProductCard } from "@/components/product-card"
 
-export function Store({ onAdd }: { onAdd: (product: Product) => void }) {
+export function Store() {
   const [active, setActive] = useState<Category | "all">("all")
 
   const filtered = useMemo(
@@ -29,7 +29,6 @@ export function Store({ onAdd }: { onAdd: (product: Product) => void }) {
         </p>
       </div>
 
-      {/* Filters */}
       <div className="mt-8 flex flex-wrap justify-center gap-2">
         {FILTERS.map((filter) => {
           const isActive = active === filter.key
@@ -50,10 +49,9 @@ export function Store({ onAdd }: { onAdd: (product: Product) => void }) {
         })}
       </div>
 
-      {/* Grid */}
       <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {filtered.map((product) => (
-          <ProductCard key={product.id} product={product} onAdd={onAdd} />
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </section>

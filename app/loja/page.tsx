@@ -1,22 +1,16 @@
 import { Navbar } from "@/components/navbar"
-import { Hero } from "@/components/hero"
-import { Store } from "@/components/store"
-import { PurchaseTicker } from "@/components/purchase-ticker"
 import { Footer } from "@/components/footer"
+import { Store } from "@/components/store"
 import { CartDrawer } from "@/components/cart-drawer"
 
-export default function Page() {
+export default function LojaPage() {
   return (
     <div className="min-h-dvh bg-neutral-950">
       <Navbar />
       <CartDrawer />
-      
-      <main>
-        <Hero />
+      <main className="pt-6">
         <Store />
-        <PurchaseTicker />
       </main>
-      
       <Footer />
     </div>
   )

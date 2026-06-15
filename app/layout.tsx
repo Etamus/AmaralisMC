@@ -18,24 +18,7 @@ export const metadata: Metadata = {
   title: 'AMALARIS — Loja Oficial do Servidor de Minecraft',
   description:
     'Adquira ranks, chaves e itens exclusivos com entrega automática e segura. Apoie o servidor e evolua sua jornada.',
-  generator: 'lukas.dev',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
+  generator: 'lukas.dev'
 }
 
 export const viewport: Viewport = {

@@ -4,10 +4,9 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: false,
+    unoptimized: true,
   },
-  basePath: '/absproxy/3000', // REMOVER ANTES DE PRODUÇÃO
-  assetPrefix: '/absproxy/3000', // REMOVER ANTES DE PRODUÇÃO
+  allowedDevOrigins: ['appamalarisdev.sinapselabs.com.br']
 }
 
 export default nextConfig
